@@ -48,7 +48,7 @@ sudo docker compose up -d unturned_srv
 ```
 
 ### Attach the Interactive Console
-Note: Normally using the docker compose logs command would be sufficient to monitor container standard output (stdout), but this console is interactive. Therefore, the stdin_open and tty flags were set true in the [docker-compose.yml](https://github.com/notarobot767/unturned/blob/main/docker-compose.yml) section for the server container. The screen utility adds the benefit to be able to pull up the server console from any SSH session. The -d flag will forcible detach a screen, and -r will then attach the open screen session on the given terminal window. The -d flag is necessary for the first time connecting upon launching the server. Subsequently including it in later sessions has no negative effects but could be ran without.
+Note: Normally using the docker compose logs command would be sufficient to monitor container standard output (stdout), but this console is interactive. Therefore, the stdin_open and tty flags were set true in the [docker-compose.yml](https://github.com/notarobot767/unturned/blob/main/docker-compose.yml) section for the server container. The screen utility adds the benefit to be able to pull up the server console from any SSH session. The -d flag will forcible detach a screen, and -r will then attach the open screen session on the given terminal window. The -d flag is necessary for the first time connecting upon launching the server. Subsequently including it in later sessions has no negative effects but could be ran without. Type help in the console to see the available commands.
 
 ```
 sudo docker compose exec unturned_srv screen -dr
@@ -65,3 +65,30 @@ Ctrl + a + d
 ```
 sudo docker compose stop unturned_srv
 ```
+
+### Restart the Server
+```
+sudo docker compose restart unturned_srv
+```
+
+## Customize the Server
+
+### Port Forwarding
+By default, UDP ports 27015 and 27016 are used. Ensure your router has a rule to forward these ports to your server when clients connect on your public IP address. If you are new to networking, read about the difference between public and private IP address and NAT. Essentially, your home network is likely a private IP address ranged, and your router has a single public IP address. Public addresses can talk on the internet while private addresses can't. NAT is the mechanism that allows your private addresses to all masquerade as your router's single public IP address. Port forwarding is how we enable a public IP to initiate a connection to private IP, in this case to your Unturned server.
+
+[Official Guide for Port Forwarding](https://docs.smartlydressedgames.com/en/stable/servers/port-forwarding.html)
+
+### Game Server Login Token
+Beginning in version 3.20.4.0 Unturned dedicated servers can be authenticated using a Game Server Login Token or GSLT. After version 3.21.31.0 anonymous servers (without GSLT) are hidden from the internet server list.
+
+Follow the [offical guide](https://docs.smartlydressedgames.com/en/stable/servers/game-server-login-tokens.html) to generate a token and apply a token to your server.
+
+### Commands.dat
+Find your commands.data file in the data/Servers/[NAME]/Server/Commands.dat
+
+Use a guide such as [nodecraft.com](https://nodecraft.com/support/games/unturned/configuring-your-unturned-server-commands-dat#h-default-single-player-loadouts-de1ae627a) to find the available options
+
+Optional: Set the server owner with the Owner command
+
+### Adminlist.dat
+In the same directory as Commands.dat, list server admins by their SteamID64 one per line
