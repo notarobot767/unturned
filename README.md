@@ -29,6 +29,9 @@ In the [.env](https://github.com/notarobot767/unturned/blob/main/.env) file, set
 All docker compose commands need to be ran within the directory of the [docker-compose.yml](https://github.com/notarobot767/unturned/blob/main/docker-compose.yml) file.
 
 ### Update the Server
+
+This will download the initial server files as well as apply any released updates.
+
 Important: Ensure server is not already running. Ensure data directory in [.env](https://github.com/notarobot767/unturned/blob/main/.env) file is as desired.
 
 Note: The detached flag "-d" was intentionally left off so that the server admin can see the update progress. Update may appear to freeze, but that is normal. This container will shutdown upon updating the server files.
@@ -45,7 +48,7 @@ sudo docker compose up -d unturned_srv
 ```
 
 ### Attach the Interactive Console
-Note: Normally using the docker compose logs command would be sufficient to monitor container standard output (stdout), but this console is interactive. Therefore, the stdin_open and tty flags were set true in the docker-compose.yml section for the server container. The screen utility adds the benefit to be able to pull up the server console from any SSH session. The -d flag will forcible detach a screen, and -r will then attach the open screen session on the given terminal window. The -d flag is necessary for the first time connecting upon launching the server. Subsequently including it in later sessions has no negative effects but could be ran without.
+Note: Normally using the docker compose logs command would be sufficient to monitor container standard output (stdout), but this console is interactive. Therefore, the stdin_open and tty flags were set true in the [docker-compose.yml](https://github.com/notarobot767/unturned/blob/main/docker-compose.yml) section for the server container. The screen utility adds the benefit to be able to pull up the server console from any SSH session. The -d flag will forcible detach a screen, and -r will then attach the open screen session on the given terminal window. The -d flag is necessary for the first time connecting upon launching the server. Subsequently including it in later sessions has no negative effects but could be ran without.
 
 ```
 sudo docker compose exec unturned_srv screen -dr
