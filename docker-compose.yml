@@ -23,4 +23,4 @@ services:
     tty: true
       #equivalent to docker run -t
     restart: unless-stopped
-    command: ["+secureserver/$SERVER_NAME"]
+    command: +secureserver/$SERVER_NAME
