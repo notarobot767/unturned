@@ -130,7 +130,7 @@ Beginning in version 3.20.4.0 Unturned dedicated servers can be authenticated us
 Follow the [official guide](https://docs.smartlydressedgames.com/en/stable/servers/game-server-login-tokens.html) to generate a token and apply a token to your server.
 
 ### Commands.dat
-Find your commands.data file in the data/Servers/[NAME]/Server/Commands.dat
+Find your commands.dat file in the data/Servers/[NAME]/Server/Commands.dat
 
 Use a guide such as [nodecraft.com](https://nodecraft.com/support/games/unturned/configuring-your-unturned-server-commands-dat#h-default-single-player-loadouts-de1ae627a) to find the available options
 
