@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#This script was intented as a draft to point server admins in the right direction
+#This script was intended as a draft to point server admins in the right direction
 #Edit it to fit your needs for automation
-#Refer to the offical documentation and learn the docker compose CLI
+#Refer to the official documentation and learn the docker compose CLI
 
 #purpose
 #start the server and attach screen
@@ -18,7 +18,7 @@ sudo docker compose up -d unturned_srv
 sudo docker compose exec unturned_srv screen -dr
 #execute the command "screen -dr" into the container instance
 #breaking with ctrl-c WILL stop the container
-#detact the screen and keep server running with key combo: Ctrl + a + d
+#detach the screen and keep server running with key combo: Ctrl + a + d
 #if making a headless update script, this command should be removed
 
 #if server is already running, running this script again will not restart it unless:

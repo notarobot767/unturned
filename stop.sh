@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#This script was intented as a draft to point server admins in the right direction
+#This script was intended as a draft to point server admins in the right direction
 #Edit it to fit your needs for automation
-#Refer to the offical documentation and learn the docker compose CLI
+#Refer to the official documentation and learn the docker compose CLI
 
 #purpose
 #start the server and attach screen
